@@ -1,11 +1,31 @@
-const express = require("express")
-const app = express()
-const port = 3002
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+const connectDB = require("./config/db");
+const routes = require("./routers");
+
+const dotenv = require("dotenv");
+dotenv.config();
+
+app.use(express.json());
+
+routes.forEach(({ path, router }) => {
+  app.use(`/api${path}`, router);
+});
 
 app.get("/auth", async (req, res) => {
-    return res.send("Hi auth")
-})
+  return res.send("Hi auth");
+});
 
-app.listen(port, () => {
-    console.log("server is running on 3002")
-})
+connectDB()
+  .then(() => {
+    console.log("Connected to MongoDB");
+    // Start the server on both ports
+    app.listen(process.env.PORT, () => {
+      console.log(`Server running on http://localhost:${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB", err);
+  });
