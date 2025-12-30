@@ -21,7 +21,6 @@ app.get("/auth", async (req, res) => {
 connectDB()
   .then(() => {
     console.log("Connected to MongoDB");
-    // Start the server on both ports
     app.listen(process.env.PORT, () => {
       console.log(`Server running on http://localhost:${process.env.PORT}`);
     });
