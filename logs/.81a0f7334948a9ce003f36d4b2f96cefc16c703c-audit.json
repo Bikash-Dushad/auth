@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "logs\\.81a0f7334948a9ce003f36d4b2f96cefc16c703c-audit.json",
+    "files": [
+        {
+            "date": 1767803618869,
+            "name": "logs\\reko-2026-01-07.log",
+            "hash": "9f47b74d79182036a95d7834a765ae719e73fb845072d08b8ac610383962ef58"
+        }
+    ],
+    "hashType": "sha256"
+}

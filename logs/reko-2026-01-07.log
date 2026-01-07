@@ -1,0 +1,4 @@
+2026-01-07T16:36:29.920Z [error]: [sendOTP] Unexpected error: Cannot destructure property 'phone' of 'payload' as it is undefined.
+2026-01-07T16:38:17.960Z [error]: [sendOTP] Unexpected error: Operation `auths.findOne()` buffering timed out after 10000ms
+2026-01-07T16:43:06.374Z [error]: [sendOTP] Unexpected error: Operation `auths.findOne()` buffering timed out after 10000ms
+2026-01-07T16:50:43.703Z [error]: [sendOTP] Validation error on 'authId': Path `authId` is required.
