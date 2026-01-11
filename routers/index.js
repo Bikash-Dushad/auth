@@ -1,7 +1,7 @@
-const userRouter = require("./auth.router");
+const authRouter = require("./auth.router");
 
 const routes = [
-  { path: "/user", router: userRouter },
+  { path: "/user", router: authRouter },
 ];
 
 module.exports = routes;

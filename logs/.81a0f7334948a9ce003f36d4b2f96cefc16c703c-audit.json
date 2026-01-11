@@ -9,6 +9,11 @@
             "date": 1767803618869,
             "name": "logs\\reko-2026-01-07.log",
             "hash": "9f47b74d79182036a95d7834a765ae719e73fb845072d08b8ac610383962ef58"
+        },
+        {
+            "date": 1767891193723,
+            "name": "logs\\reko-2026-01-08.log",
+            "hash": "4f1f3dedab4892e74cc44b58bfd23b9240a1aee605caadfa06052a9e92db33a9"
         }
     ],
     "hashType": "sha256"

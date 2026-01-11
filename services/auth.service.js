@@ -48,6 +48,7 @@ const verifyOTPService = async (payload) => {
   }
   const tokenPayload = {
     id: user._id,
+    phone: user.phone,
   };
   const token = createToken(tokenPayload);
   user.otp = "";
