@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const startCaptainRegisteredConsumer = require("./kafka/consumer");
 const connectDB = require("./config/db");
 const routes = require("./routes");
 
@@ -31,6 +31,7 @@ if (process.env.NODE_ENV !== "production") {
       app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
       });
+      startCaptainRegisteredConsumer();
     })
     .catch((err) => {
       console.error("Failed to connect to MongoDB", err);

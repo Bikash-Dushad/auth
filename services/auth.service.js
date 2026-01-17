@@ -53,7 +53,12 @@ const verifyOTPService = async (payload) => {
   const token = createToken(tokenPayload);
   user.otp = "";
   await user.save();
-  return token;
+
+  const data = {
+    token,
+    isRegistered: user.isRegistered,
+  };
+  return data;
 };
 
 module.exports = {

@@ -16,10 +16,14 @@ const authSchema = new mongoose.Schema(
       default: "",
     },
     role: {
-        type: String,
-        enum: ["user", "captain", "super-admin", "admin", "moderator"],
-        default: "user"
-    }
+      type: String,
+      enum: ["user", "captain", "super-admin", "admin", "moderator"],
+      default: "user",
+    },
+    isRegistered: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

@@ -14,6 +14,16 @@
             "date": 1768492546937,
             "name": "logs\\auth-2026-01-15.log",
             "hash": "c65ed2c144d35664508175de3da6e31aa4505f636d048143b61a2c41edc7e0c6"
+        },
+        {
+            "date": 1768583330112,
+            "name": "logs\\auth-2026-01-16.log",
+            "hash": "c082eb91be4899a55b54d586e243e2278318254d09423c25c82d86fcf675b100"
+        },
+        {
+            "date": 1768667203401,
+            "name": "logs\\auth-2026-01-17.log",
+            "hash": "802e9b9b6708f045f9302f26da08a4a566785c3e9d3f6506cc7aa593ba46cf07"
         }
     ],
     "hashType": "sha256"
