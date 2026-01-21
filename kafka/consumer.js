@@ -8,7 +8,6 @@ const markCaptainAsRegistered = async ({ authId }) => {
     const user = await AuthModel.findById(authId);
     if (!user) {
       throw new Error("Auth user not found");
-      return;
     }
     user.isRegistered = true;
     await user.save();
