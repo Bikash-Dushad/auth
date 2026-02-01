@@ -1,9 +1,9 @@
 const kafka = require("../config/kafka");
-const { CAPTAIN_REGISTERED } = require("./topics");
+const { AUTHUSER_REGISTERED } = require("./topics");
 const consumer = kafka.consumer({ groupId: "auth-service-group" });
 const AuthModel = require("../models/auth.schema");
 
-const markCaptainAsRegistered = async ({ authId }) => {
+const markAuthUserRegistered = async ({ authId }) => {
   try {
     const user = await AuthModel.findById(authId);
     if (!user) {
@@ -16,10 +16,10 @@ const markCaptainAsRegistered = async ({ authId }) => {
   }
 };
 
-const startCaptainRegisteredConsumer = async () => {
+const startAuthUserRegisteredConsumer = async () => {
   await consumer.connect();
   await consumer.subscribe({
-    topic: CAPTAIN_REGISTERED,
+    topic: AUTHUSER_REGISTERED,
     fromBeginning: false,
   });
 
@@ -28,12 +28,12 @@ const startCaptainRegisteredConsumer = async () => {
   await consumer.run({
     eachMessage: async ({ message }) => {
       const data = JSON.parse(message.value.toString());
-      
-      await markCaptainAsRegistered({
+
+      await markAuthUserRegistered({
         authId: data.authId,
       });
     },
   });
 };
 
-module.exports = startCaptainRegisteredConsumer;
+module.exports = startAuthUserRegisteredConsumer;
